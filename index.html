@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo JavaScript</title>
+</head>
+<body>
+    <h1>Mi primer proyecto con Git y JS</h1>
+    <button id="miBoton">Haz clic aquí</button>
+    <p id="mensaje"></p>
+
+    <script>
+        // Aquí empieza mi código JavaScript
+        const boton = document.getElementById('miBoton');
+        const mensaje = document.getElementById('mensaje');
+        
+        boton.addEventListener('click', function() {
+            mensaje.textContent = '¡JavaScript funciona! Y este cambio está versionado con git.';
+        });
+        
+        console.log('Todo listo, bienvenido a la programación');
+    </script>
+</body>
+</html>
