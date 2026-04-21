@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aprendiendo JavaScript</title>
+    <title>Mi diario de aprendizaje JS</title>
 </head>
 <body>
-    <h1>Mi primer proyecto con Git y JS</h1>
-    <button id="miBoton">Haz clic aquí</button>
+    <h1>📗 Aprendiendo JavaScript</h1>
+    <p>Abre la consola del navegador (F12 o clic derecho → Inspeccionar → Consola)</p>
+    <p>Verás los mensajes de <code>console.log()</code> que escribiste.</p>
+    
+    <button id="saludarBtn">Saludar</button>
     <p id="mensaje"></p>
 
+    <!-- Cargar tu archivo JavaScript -->
+    <script src="variables.js"></script>
+    
+    <!-- Código adicional para el botón -->
     <script>
-        // Aquí empieza mi código JavaScript
-        const boton = document.getElementById('miBoton');
+        const btn = document.getElementById('saludarBtn');
         const mensaje = document.getElementById('mensaje');
         
-        boton.addEventListener('click', function() {
-            mensaje.textContent = '¡JavaScript funciona! Y este cambio está versionado con git.';
+        btn.addEventListener('click', () => {
+            mensaje.textContent = '¡Botón funcionando! JavaScript está vivo.';
         });
-        
-        console.log('Todo listo, bienvenido a la programación');
     </script>
 </body>
 </html>
