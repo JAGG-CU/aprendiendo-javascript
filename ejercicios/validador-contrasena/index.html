@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Contraseña</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        /* El mensaje de resultado cambiará de color */
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        /* Clases que se aplicarán dinámicamente */
+        .resultado.debil {
+            background-color: #ffebee;
+            color: #c62828;
+            border-left: 4px solid #c62828;
+        }
+
+        .resultado.media {
+            background-color: #fff8e1;
+            color: #f57c00;
+            border-left: 4px solid #f57c00;
+        }
+
+        .resultado.fuerte {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .resultado.error {
+            background-color: #ffebee;
+            color: #c62828;
+            border-left: 4px solid #c62828;
+        }
+
+        /* Barra de fuerza (bonus visual) */
+        .barra-fuerza {
+            margin-top: 10px;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .barra-fuerza .fill {
+            height: 100%;
+            width: 0%;
+            transition: all 0.3s ease;
+        }
+
+        .barra-fuerza .fill.debil {
+            width: 33%;
+            background-color: #c62828;
+        }
+
+        .barra-fuerza .fill.media {
+            width: 66%;
+            background-color: #f57c00;
+        }
+
+        .barra-fuerza .fill.fuerte {
+            width: 100%;
+            background-color: #2e7d32;
+        }
+
+        /* Requisitos checklist */
+        .requisitos {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .requisitos p {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .requisitos ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .requisitos li {
+            margin: 5px 0;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .requisitos li.cumplido {
+            color: #2e7d32;
+        }
+
+        .requisitos li.no-cumplido {
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Validador de Contraseña</h1>
+        
+        <label>Ingresa tu contraseña:</label>
+        <input type="password" id="contrasena" placeholder="Escribe aquí...">
+        
+        <div class="barra-fuerza">
+            <div class="fill" id="barraFill"></div>
+        </div>
+        
+        <div class="resultado" id="resultado">
+            ⚡ Esperando contraseña...
+        </div>
+        
+        <div class="requisitos">
+            <p>📋 Requisitos:</p>
+            <ul>
+                <li id="reqLongitud">🔹 Mínimo 6 caracteres</li>
+                <li id="reqNumeros">🔹 Al menos un número</li>
+                <li id="reqMayuscula">🔹 Al menos una mayúscula</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
